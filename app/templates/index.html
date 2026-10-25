@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniExtract API — Web-to-Markdown & LLM Data Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="logo">
+        <span class="logo-badge">⚡ OmniExtract</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#playground">Playground</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#docs">Docs</a>
+        <a href="#pricing" class="btn btn-primary">Get API Key</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="pill-tag">
+        <span>🚀 Token-Optimized Web Extraction for AI Agents & RAG</span>
+      </div>
+      <h1>
+        Turn Any Webpage into <br>
+        <span class="gradient-text">Clean, Noise-Free Markdown</span>
+      </h1>
+      <p>
+        Strip cookie banners, navigation menus, ads, and messy markup. Deliver token-efficient content directly to your LLM prompts with an average 85% token reduction.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center;">
+        <a href="#playground" class="btn btn-primary" style="padding: 12px 28px; font-size: 1rem;">Try Live Demo</a>
+        <a href="#pricing" class="btn btn-outline" style="padding: 12px 28px; font-size: 1rem;">View Pricing Plans</a>
+      </div>
+    </section>
+
+    <!-- Interactive Live Playground -->
+    <section id="playground" class="playground-section container">
+      <div class="playground-card">
+        <div class="panel-header" style="border: none; padding-bottom: 0;">
+          <h3 style="color: var(--text-main); font-size: 1.15rem;">Live Extraction Playground</h3>
+          <span style="color: var(--accent); font-size: 0.85rem;">● Free Tier Active</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+          Paste any public URL below and see the noise-free Markdown output along with live token savings.
+        </p>
+
+        <div class="url-input-bar">
+          <input 
+            type="url" 
+            id="target-url" 
+            value="https://en.wikipedia.org/wiki/Artificial_intelligence" 
+            placeholder="https://example.com/article" 
+          />
+          <button id="btn-extract" class="btn btn-accent">Extract to Markdown 🚀</button>
+        </div>
+
+        <div class="playground-grid">
+          <!-- Left: Markdown Content -->
+          <div>
+            <div class="panel-header">
+              <span>OUTPUT (MARKDOWN)</span>
+              <button id="btn-copy-md" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;">Copy Markdown</button>
+            </div>
+            <div id="markdown-output" class="code-box">Click "Extract to Markdown" to parse this URL in real time.</div>
+          </div>
+
+          <!-- Right: Metrics & Metadata -->
+          <div class="metrics-panel">
+            <div class="panel-header">
+              <span>EXTRACTION METRICS</span>
+            </div>
+
+            <div class="metric-stat-card">
+              <div class="label">Token Reduction</div>
+              <div class="val" id="token-savings-val">--%</div>
+              <div class="sub">Tokens eliminated vs raw HTML</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="metric-stat-card">
+                <div class="label">Markdown Tokens</div>
+                <div class="val" id="tokens-markdown-val" style="font-size: 1.25rem; color: #60a5fa;">--</div>
+              </div>
+              <div class="metric-stat-card">
+                <div class="label">Raw HTML Tokens</div>
+                <div class="val" id="tokens-html-val" style="font-size: 1.25rem; color: var(--text-dim);">--</div>
+              </div>
+            </div>
+
+            <div class="metric-stat-card">
+              <div class="label">Document Metadata</div>
+              <div id="meta-title" style="font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; color: var(--text-main);">--</div>
+              <div id="meta-desc" style="font-size: 0.85rem; color: var(--text-muted); max-height: 80px; overflow-y: auto;">--</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section container">
+      <h2>Simple, Developer-Friendly Pricing</h2>
+      <p class="subtitle">100% automated provisioning. Instant API keys delivered after payment.</p>
+
+      <div class="pricing-grid">
+        <!-- Starter Plan -->
+        <div class="pricing-card">
+          <div>
+            <div class="plan-name">Starter</div>
+            <div class="price">$9</div>
+            <div class="period">per month</div>
+            <ul class="feature-list">
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                10,000 requests/month
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Clean Markdown & plain text
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Metadata & token analytics
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Rate limit: 100 req/min
+              </li>
+            </ul>
+          </div>
+          <button onclick="subscribeToPlan('starter')" class="btn btn-outline" style="width: 100%;">Get Starter</button>
+        </div>
+
+        <!-- Pro Plan (Featured) -->
+        <div class="pricing-card featured">
+          <div class="popular-badge">Most Popular</div>
+          <div>
+            <div class="plan-name">Pro</div>
+            <div class="price">$29</div>
+            <div class="period">per month</div>
+            <ul class="feature-list">
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                50,000 requests/month
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                All Starter features included
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Structured CSS & JSON parser
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                High throughput (300 req/min)
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Priority email support
+              </li>
+            </ul>
+          </div>
+          <button onclick="subscribeToPlan('pro')" class="btn btn-primary" style="width: 100%;">Get Pro Plan</button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div>
+            <div class="plan-name">Enterprise</div>
+            <div class="price">$79</div>
+            <div class="period">per month</div>
+            <ul class="feature-list">
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                250,000 requests/month
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Custom rate limit increases
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                99.9% uptime SLA guarantee
+              </li>
+              <li>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Dedicated Slack/Discord support
+              </li>
+            </ul>
+          </div>
+          <button onclick="subscribeToPlan('enterprise')" class="btn btn-outline" style="width: 100%;">Get Enterprise</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Integration Section -->
+    <section id="docs" class="docs-section container">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h2>Simple 2-Line Integration</h2>
+        <p style="color: var(--text-muted);">Integrate directly into LangChain, LlamaIndex, AutoGen, or custom Python/Node scripts.</p>
+      </div>
+
+      <div class="playground-card" style="max-width: 800px; margin: 0 auto;">
+        <div class="tabs-header">
+          <button class="tab-btn active" data-lang="curl">cURL</button>
+          <button class="tab-btn" data-lang="python">Python</button>
+          <button class="tab-btn" data-lang="javascript">JavaScript / TypeScript</button>
+        </div>
+        <div id="code-snippet-box" class="code-box" style="height: 220px;">curl -X POST "https://your-domain.com/v1/scrape" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://en.wikipedia.org/wiki/Artificial_intelligence"}'</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 OmniExtract API. Automated Web Scraping & Markdown Extraction Engine.</p>
+    </div>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
